@@ -35,7 +35,7 @@ GROUP BY
 ORDER BY
     average_quantity DESC;
 
---Top 10 Best Selling Products per Quantity--
+--Top 10 Best Selling Products by Volume--
 SELECT
     products.product_name,
     SUM(order_items.quantity) AS total_quantity

@@ -19,35 +19,44 @@ ORDER BY
 LIMIT
     10;
 
---**Top 10 Best Selling Products AVG Rating (by volume)--
-WITH top_selling_products AS (
+--Top 10 Best Selling Products AVG Rating (by volume)--
+WITH product_sales AS (
     SELECT
-        products.product_id,
-        products.product_name,
-        SUM(order_items.quantity) AS total_quantity
+        p.product_name,
+        p.product_id,
+        SUM(oi.quantity) AS total_quantity
     FROM
-        products
-    INNER JOIN
-        order_items ON products.product_id = order_items.product_id
+        order_items oi
+    JOIN
+        products p ON p.product_id = oi.product_id
     GROUP BY
-        products.product_id, products.product_name
-    ORDER BY
-        total_quantity DESC
-    LIMIT 10
+        p.product_id, p.product_name
+),
+product_reviews AS (
+    SELECT
+        p.product_name,
+        AVG(r.rating) AS average_rating
+    FROM
+        products p
+    JOIN
+        reviews r ON r.product_id = p.product_id
+    GROUP BY
+        p.product_name
 )
 
 SELECT
-    top_selling_products.product_name,
-    top_selling_products.total_quantity,
-    AVG(reviews.rating) AS average_rating
+    ps.product_name,
+    SUM(ps.total_quantity) AS total_quantity,
+    ROUND(pr.average_rating, 0) AS average_rating
 FROM
-    top_selling_products
+    product_sales ps
 LEFT JOIN
-    reviews ON top_selling_products.product_id = reviews.product_id
+    product_reviews pr ON ps.product_name = pr.product_name
 GROUP BY
-    top_selling_products.product_name, top_selling_products.total_quantity
+    ps.product_name, pr.average_rating
 ORDER BY
-    top_selling_products.total_quantity DESC;
+    total_quantity DESC
+LIMIT 10;
 
 --Avg Category Rating--
 SELECT
