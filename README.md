@@ -79,8 +79,8 @@ Here's the breakdown of the revenue of each product category:
 
 - **Revenue distribution is somewhat balanced**: No single category dominates disproportionately — even the smallest (Furniture) contributes a significant portion. This indicates a relatively diverse product portfolio with revenue coming from multiple sources.
 
-    ![S&R](assets\2_sales_and_revenue.png)
-
+    ![S&R](assets/2_sales_and_revenue.png)
+  
 *Pie chart visualizing the revenue coming from each product category; ChatGPT generated this graph from my SQL query results.*
 
 ### 3. Shipments
@@ -110,8 +110,8 @@ Here's the breakdown of the order to shipment times:
 
 - **Overall distribution suggests consistency**: The peak around 2–4 days, as well as the symmetrical drop-off at 1 and 5 days, implies a controlled and predictable shipping process.
 
-    ![O2ST](assets\3_shipment_analysis.png)
-
+    ![O2ST](assets/3_shipment_analysis.png)
+  
 *Bar chart showing the orders processed to shipment by the amount of days the process takes.*
 
 ### 4. Customer Segmentation
@@ -246,12 +246,12 @@ Here's a breakdown of the top suppliers by category and their product volumes fo
 
 - **Potential for Category Expansion or Supplier Diversification**: With only one top supplier per category highlighted, it’s unclear how dominant they are over others. This opens up the possibility to further analyze supplier concentration per category — useful for identifying areas of dependency or diversification need.
 
-| Category       | Supplier                | Products they Provide |
-| -------------- | ----------------------- | --------------------- |
-| Accessories    | Tech Supplies Inc.      | 60                    |
-| Electronics    | Unified Trading Co.     | 80                    |
-| Furniture      | Premier Logistics Inc.  | 40                    |
-| Home & Kitchen | Precision Suppliers LLC | 60                    |
+    | Category       | Supplier                | Products they Provide |
+    | -------------- | ----------------------- | --------------------- |
+    | Accessories    | Tech Supplies Inc.      | 60                    |
+    | Electronics    | Unified Trading Co.     | 80                    |
+    | Furniture      | Premier Logistics Inc.  | 40                    |
+    | Home & Kitchen | Precision Suppliers LLC | 60                    |
 
 *Table of the top supplier by category regarding product volume.*
 
@@ -330,7 +330,7 @@ Here's the breakdown of the top products raitings:
 ## 7. Dashboard
 To conclude this analysis, I built a dashboard which delivers a clear, visual overview of the most critical business metrics for the Online Shop in 2024, helping stakeholders quickly grasp performance and act with confidence.
 
-![dash](assets\Online_shop_2024.png)
+![dash](assets/Online_shop_2024.png)
 
 It highlights:
 
