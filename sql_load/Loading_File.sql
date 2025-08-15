@@ -81,19 +81,19 @@ CREATE TABLE suppliers (
 
 \copy table_name FROM '[Path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
-\copy customers FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\customers.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy order_items FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\order_items.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy orders FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\orders.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy payment FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\payment.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy products FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\products.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy reviews FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\reviews.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy shipments FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\shipments.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
-\copy suppliers FROM 'C:\Users\allis\OneDrive\Documents\2025\Sql\Online_Shopping_2024\csv_files\suppliers.csv' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy customers FROM '[local customers.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy order_items FROM '[local order_items.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy orders FROM '[local orders.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy payment FROM '[local payment.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy products FROM '[local products.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy reviews FROM '[local reviews.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy shipments FROM '[local shipments.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
+\copy suppliers FROM '[local suppliers.csv path]' WITH (FORMAT csv, HEADER true, DELIMITER ',', ENCODING 'UTF8');
 
 --Tests--
 SELECT 
     * 
 FROM
-    orders
+    table_name
 LIMIT
     10;
